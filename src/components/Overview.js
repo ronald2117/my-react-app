@@ -1,14 +1,19 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Overview = (props) => {
   const { tasks } = props;
 
   return (
-    <ul>
+    <ol>
       {tasks.map((task) => {
-        return <li key={task.key}>{task.text}</li>;
+        return (
+           <li key={task.key}>
+          {task.text}<FontAwesomeIcon icon="fa-solid fa-trash" />
+          </li>
+        )
       })}
-    </ul>
+    </ol>
   );
 };
 
